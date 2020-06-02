@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CheckList.App.ViewModels"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CheckList.App.Views.LoginView">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="64">
+            
+            <Entry Placeholder="Usuario" Text="{Binding Usuario}"></Entry>
+            <Entry Placeholder="Senha" IsPassword="True" Text="{Binding Senha}"></Entry>
+            <Button Text="Entrar" Command="{Binding EntrarCommand}"></Button>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

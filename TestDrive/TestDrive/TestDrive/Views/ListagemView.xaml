@@ -5,31 +5,42 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TestDrive.Views.ListagemView">
-    
+             x:Class="TestDrive.Views.ListagemView"
+             xmlns:vm="clr-namespace:TestDrive.ViewModels">
 
-    <ListView x:Name="listViewVeiculos" ItemsSource="{Binding Veiculos}" Margin="25" ItemTapped="listViewVeiculos_ItemTapped">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <ViewCell.View>
-                        <Label>
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="{Binding Nome}" FontSize="20"></Span>
-                                        <Span Text=" - "></Span>
-                                        <Span Text="{Binding PrecoFormatado}" FontAttributes="Bold"></Span>                                        
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                    </ViewCell.View>                    
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
 
-    
+    <!-- contexto declaro no code behind
+    <ContentPage.BindingContext>
+        <vm:ListagemViewModel></vm:ListagemViewModel>
+    </ContentPage.BindingContext>-->
+    <StackLayout Margin="25">
+        <ActivityIndicator IsRunning="{Binding Aguarde}"
+                           IsVisible="{Binding Aguarde}">
+            
+        </ActivityIndicator>
+        <ListView x:Name="listViewVeiculos" ItemsSource="{Binding Veiculos}"  SelectedItem="{Binding VeiculoSelecionado}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="{Binding Nome}" FontSize="20"></Span>
+                                            <Span Text=" - "></Span>
+                                            <Span Text="{Binding PrecoFormatado}" FontAttributes="Bold"></Span>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+
 
 </ContentPage>

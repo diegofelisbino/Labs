@@ -6,6 +6,8 @@
              mc:Ignorable="d"
              x:Class="TestDrive.Views.DetalheView"
              Title="{Binding Veiculo.Nome}">
+
+
     <ContentPage.Content>
 
         <StackLayout Padding="25">
@@ -24,10 +26,10 @@
             <Button 
             x:Name="buttonProximo" 
             Text="Próximo" 
-            Clicked="buttonProximo_Clicked" 
+            Command="{Binding ProximoCommand}"
             VerticalOptions="End">
             </Button>
-            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
