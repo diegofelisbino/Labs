@@ -8,6 +8,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <NoWarn>CA1031;CA1303;CA2000;CA2007;1701;1702</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

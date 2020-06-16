@@ -8,10 +8,10 @@
              x:Class="TestDrive.Views.MasterDetailView"
              xmlns:pages="clr-namespace:TestDrive.Views">
 
-    <MasterDetailPage.Master>
-        <!--<pages:MasterDetailViewMaster x:Name="MasterPage" />-->
-        <view:MasterView></view:MasterView>
-    </MasterDetailPage.Master>
+    <!--<MasterDetailPage.Master>
+        --><!--<pages:MasterDetailViewMaster x:Name="MasterPage" />--><!--
+        
+    </MasterDetailPage.Master>-->
 
     <MasterDetailPage.Detail>
         <NavigationPage>

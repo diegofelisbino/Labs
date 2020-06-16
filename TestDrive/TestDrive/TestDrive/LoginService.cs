@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -38,7 +39,9 @@ namespace TestDrive
 
                 if (resultado.IsSuccessStatusCode)
                 {
-                    MessagingCenter.Send<Usuario>(new Usuario(), "SucessoLogin");
+                    var conteudoResultado = await resultado.Content.ReadAsStringAsync();
+                    var resultadoLogin = JsonConvert.DeserializeObject<ResultadoLogin>(conteudoResultado);
+                    MessagingCenter.Send<Usuario>(resultadoLogin.usuario, "SucessoLogin");
                 }
                 else
                 {

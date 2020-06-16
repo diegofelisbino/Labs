@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using TestDrive.Models;
+using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
 {
@@ -20,9 +22,16 @@ namespace TestDrive.ViewModels
 		}
 
 		private readonly Usuario usuario;
-		public MasterViewModel(Usuario usuario)
+        public ICommand EditarPerfilCommand { get; private set; }
+        public MasterViewModel(Usuario usuario)
 		{
 			this.usuario = usuario;
+
+			EditarPerfilCommand = new Command(() =>
+			{
+				MessagingCenter.Send<Usuario>(usuario, "EditarPerfil");
+				
+			});
 		}
 	}
 }

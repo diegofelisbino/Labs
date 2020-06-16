@@ -18,21 +18,22 @@ namespace TestDrive.Views
             InitializeComponent();
             //MasterPage.ListView.ItemSelected += ListView_ItemSelected;
             this.usuario = usuario;
+            this.Master = new MasterView(usuario);// master detail page master
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var item = e.SelectedItem as MasterDetailViewMasterMenuItem;
-            if (item == null)
-                return;
+        //private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        //{
+        //    var item = e.SelectedItem as MasterDetailViewMasterMenuItem;
+        //    if (item == null)
+        //        return;
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-            page.Title = item.Title;
+        //    var page = (Page)Activator.CreateInstance(item.TargetType);
+        //    page.Title = item.Title;
 
-            Detail = new NavigationPage(page);
-            IsPresented = false;
+        //    Detail = new NavigationPage(page);
+        //    IsPresented = false;
 
-            //MasterPage.ListView.SelectedItem = null;
-        }
+        //    //MasterPage.ListView.SelectedItem = null;
+        //}
     }
 }

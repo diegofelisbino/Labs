@@ -13,7 +13,7 @@ namespace TestDrive.Models
         public string email { get; set; }
     }
 
-    public class LoginResult
+    public class ResultadoLogin
     {
         public Usuario usuario { get; set; }
     }
